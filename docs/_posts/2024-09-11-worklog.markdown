@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "Worklog 1"
+date:   2024-09-11 00:50:05 +0200
+categories: jekyll update
+---
+
+* working my way through Vulkan tutorial (draw a triangle)
+* learned about physical devices, logical devices, queue families, swap chains, image views
+* reviewed basic graphics pipeline

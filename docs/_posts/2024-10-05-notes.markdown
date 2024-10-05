@@ -1,0 +1,47 @@
+---
+layout: post
+title:  "Worklog 2"
+date:   2024-10-05 00:50:05 +0200
+categories: jekyll update
+---
+
+* what does `a posteriori` mean?
+* a `a posteriori` is general term for "with hindsight". A distribution maximizes the a posteriori probability if the distribution is most likely given previously observed data.
+* what is a Kalman filter?
+* a Kalman filter is state estimator, which incorporates sensor measurements to improve predictions about the state of a system. An estimator consists of two steps: (1) a time update step, where predictions are made based on previous information and (2) correction step, where those predictions are augmented with sensor measurements. What makes the Kalman filter practical is its recursive nature, we can simply incorporate the latest measurement, without storing all previous measurements in memory.
+* if Kalman filter is a state estimator, how do we express state?
+* state is expressed using (1) a state vector, where each entry represents the current state for each degree of freedom and (2) a covariance matrix, where each entry reflects the covariance regarding each state; we need to know variaance for each individual degree of freedom and covariance between them.
+* what are assumptions of Kalman filter and what are alternatives?
+* Kalman filter assumes each state variable follows a Gaussian distribution. It is unimodal. An example which violates this is a car that meets a fork in the road. It may go left or right, but not likely straight. This distribution would be bimodal and not Gaussian, which is unimodal. A particle filter can model non-Gaussian distributions. The prior distribution, or initial distribution, for the state for a Kalman filter must be Gaussian. The three assumptions
+    * the system being modeled is linear. In brief, state of system at time k can be expressed as vector, and state a moment later can expressed as state at time k multiple by some matrix F.
+    * the sensor measurement noise is "white noise"
+    * the noise is also Gaussian in nature. 
+Last two assumptions mean noise is not occrelated in time and amplitude can be modeled with an average and covariance (1st and 2nd moments)
+* We start with what we know, gain some new information, decide to change what we know based on our certainity with old + new information using weighted combination of old and new
+* what is information fusion?
+* we can combine two Gaussian measurements to create new Guassian measurement easily.
+* what is the innovation?
+* the difference between measurement and prediction
+* what is update/Kalman gain?
+* how to weight new information against what we think we already know
+* what are the formulas for generalized multidemsnaionl Kalman filter?
+    * state at time x: x_k = Fx_k-1 + Bu_k + w_k
+        * x_k: current state, n-dimensional
+        * x_k-1: previous state, n-dimensional
+        * F: transfer/transition matrix, nxn-dimension
+        * B: nxc matrix, relates controls to state
+        * u_k: control inputs, c dimensional vector
+        * w_k: process noise (Q_k covariance matrix)
+    * measurement: z_k = Hx_k + v_k
+        * z_k: m-dimensional measurement vector
+        * H: mxn matrix
+        * v_k: measurement error (R_k covariance matrix)
+    * a priori estimate: x_k^- = Fx_k-1 + Bu_k-1 + w_k
+    * a priori covariance estimate: p_k^- = FP_k-1F^T + Q_k-1
+    * Kalman gain: K_k = P_k^-H_K^T(H_kP_k^-H_k^T + R_k)^-1
+        * note think of 1-D variables to sanity-check
+    * measurement update: x_k = x_k^-1 + K_k(z_k^- - H_kx_k^-)
+    * measurement update (covariance): P_k = (I - K_kH_k)P_K^-
+* what is the minus (sign)?
+    * a priori: at the time immediately prior to hte new measurement
+

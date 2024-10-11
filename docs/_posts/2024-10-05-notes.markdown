@@ -25,7 +25,7 @@ Last two assumptions mean noise is not occrelated in time and amplitude can be m
 * what is update/Kalman gain?
 * how to weight new information against what we think we already know
 * what are the formulas for generalized multidemsnaionl Kalman filter?
-    * state at time x: x_k = Fx_k-1 + Bu_k + w_k
+    * state update: at time x: x_k = Fx_k-1 + Bu_k + w_k
         * x_k: current state, n-dimensional
         * x_k-1: previous state, n-dimensional
         * F: transfer/transition matrix, nxn-dimension
@@ -44,4 +44,10 @@ Last two assumptions mean noise is not occrelated in time and amplitude can be m
     * measurement update (covariance): P_k = (I - K_kH_k)P_K^-
 * what is the minus (sign)?
     * a priori: at the time immediately prior to hte new measurement
+* what problem does EKF solve?
+    * Kalman filter relies on linear system. Update step can be expressed using matrix operations. EKF locally linearizes at each time step e.g. update F or control input response B. These are new at each step. An example would be that control measure is amount gas pedal is depressed (B); relationship between car velocity and pedal depression rate is non-linear. Another example would be that force on car more naturally expressed in Cartesian, while motion of object (like boat or car) more naturally expressed in polar.
+* how do the equations change for EKF:
+    * state update: x_k = f(x_k-1, u_k) + w_k => Fx_k-1 + w_k; F = df/dx
+    * measurement update: z_k = h(x_k) + v_k => H_kx_k + v_k; H = dh/dx
+    * where is B? in nonlinear case, not uncommon for state x_k and control u_k to be coupled
 

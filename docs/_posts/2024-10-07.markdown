@@ -1,0 +1,37 @@
+---
+layout: post
+title:  "Worklog 3"
+date:   2024-10-07 00:50:05 +0200
+categories: jekyll update
+---
+
+* how can you test whether a parametric curve is arc-length parametrized?
+    * if you go along by steps of t, that there is a constant velocity of 1
+    * this is ||r'(t)|| = 1 (magnitude of velocity is always 1)
+    * in other words, the parameter directly measures the distance along the curve
+* how can you evaluate arch length of curve?
+* how can you write a surface in arc-length parametrized form? Or parametrize by arc-length?
+* what are nice properties of arc-length parametrization?
+    * curve along which you travel with constant velocity. where is this important? animation
+* what is the approximate solution method described by westerman (6/11)?
+* can any curve be arc-length parametrized?
+    * what if the curve has discontinuities?
+* what is a Bernstein polynomial and why is it relevant?
+    * Bezier curves defined using control points, and the curve lies within convex hull of these points.
+    * This is a direct result of Bernstein polynomials forming a partition of unity.
+    * control points are Bernstein polynomails; weights applied to control points always sum to 1 at any point
+* what is affine invariance and why is it an important property?
+    * Bezier curve is weighted sum of control points and weights are given by Bernstein polynomials. If you want to apply affine transformation to Bezier, apply to control points. Then construct Bezier curve from affine transformed control points. Bernstein polynomials forming partition of unity makes this possible.
+* what is the casteljau algorithm?
+* how can I draw a Bezier curve?
+    * know start and last 
+* what is hermite approach?
+    * two points through which curves go
+    * tangent
+* what does it mean to build a partition of unity?
+    * a collection of fucntions that "cover" a space in a useful way
+    * It's a set of smooth, continous or locally-defined function whose sum is equal to 1 at every point in the space they cover.
+* can i reorder a product which has a binomial coefficient?
+    * Yeah. The binomial coefficient is just a scalar.
+* what is a convex combination?
+    * a specific type of linear combination where coefficients are non-negative and sum to 1.

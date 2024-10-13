@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Worklog 4"
+title:  "Worklog 3"
 date:   2024-10-06 00:50:05 +0200
 categories: jekyll update
 ---

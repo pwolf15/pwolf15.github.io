@@ -13,6 +13,21 @@ categories: jekyll update
 * `Animal Farm`:
     * Animalism: avoid the instincts of men to enslave and exploit for labor
 
+* Machine learning Intro and KNNs
+    * Learning strategies
+        * Supervised: labeled dataset for training, followed by unlabeled dataset for testing
+        * Unsupervised: no labeled data; model should "learn" shape of data via dimensionality reduction or clustering
+        * Semi-supervised: not sure what this; maybe it's autoencoders. It's applicable to generative models like ChatGPT.
+    * Learning problems
+        * Classification: output to fixed number of classes
+            * Image classification: dog/zebra/cat etc.
+        * Regression: output to continuous range
+            * Predict house prices given set of parameters
+    * What is a decision point in KNNs?
+        * This is at the edge of nearest neighbors where data is unclassifiable
+    * What types of problems are KNNs applicable to?
+        * Regression or classification.
+
 * Machine learning `Math refresher`
     * How can you determine the dimensionality of each variable in an expression?
         * Can you provide an example?
@@ -25,3 +40,9 @@ categories: jekyll update
         * This contrasts to row rank/column rank where only rows/columns must be independent.
     * What is required for pseudo-inverse? What are applications?
         * Pseudo-inverse only requires row-rank.
+
+* Geo processing exam review
+    * What is loop subdivision and can you give an example of it in practice?
+    * What are the rules for drawing Bezier curves?
+    * What are edge collapse and vertex splitting?
+    * How does marching cubes algorithm work? Marching squares?

@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "Failure, Animalism, and ML math refresher"
+date:   2024-10-14 00:50:05 +0200
+categories: jekyll update
+---
+
+* `5 elements of effective thinking`:
+    * How to improve insight?
+        * Write down everything you know about a subject. This agrees with `Make It Stick` in that you are forcing retrieval.
+        * Try doing the opposite. Hold the opposite opinion for an 1hr at a time, 15 minutes at a time.
+
+* `Animal Farm`:
+    * Animalism: avoid the instincts of men to enslave and exploit for labor
+
+* Machine learning `Math refresher`
+    * How can you determine the dimensionality of each variable in an expression?
+        * Can you provide an example?
+    * What must be true about each variable in `Ax=b` to ensure a unique solution `x`?
+        * `A` must be square and full-rank. 
+        * Can you provide a counter example that shows why both must be true?
+    * What is rank?
+        * rank refers to the number of independent rows and columns in a matrix. Independence requires that rows/columns are not linear combination of other rows/columns.
+    * What is full-rank?
+        * This contrasts to row rank/column rank where only rows/columns must be independent.
+    * What is required for pseudo-inverse? What are applications?
+        * Pseudo-inverse only requires row-rank.
